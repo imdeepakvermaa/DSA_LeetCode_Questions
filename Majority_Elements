@@ -1,0 +1,17 @@
+def majorityElement(self, nums: List[int]) -> int:
+        count = 0
+        eli = 0
+        for i in range(0,len(nums)):
+            if(count==0):
+                eli = nums[i]
+                count += 1
+            elif(nums[i] == eli):
+                count += 1
+            else:
+                count -= 1
+        count2 = 0
+        for j in range(0,len(nums)):
+            if(nums[j]==eli):
+                count2 += 1
+        if(count2>len(nums)/2):
+            return eli
